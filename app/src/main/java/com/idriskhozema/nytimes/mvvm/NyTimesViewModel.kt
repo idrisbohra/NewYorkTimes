@@ -19,7 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NyTimesViewModel @Inject constructor(
-    private val repository: NyTimesArticlesRepository
+    private val repository: NyTimesArticlesRepo
 ) :ViewModel() {
 
 
@@ -29,7 +29,6 @@ class NyTimesViewModel @Inject constructor(
 
 
     fun getArticles() {
-
         viewModelScope.launch {
             repository.fetchArticles().onStart {
                 _mutableData.value = DataState.Loading
@@ -39,22 +38,8 @@ class NyTimesViewModel @Inject constructor(
         }
     }
 
-    private fun fetchArticles(block: suspend () -> Flow<DataState<NyTimesData>>) {
-        viewModelScope.launch {
-            try {
-                val data = block()
-                data.map {
-                    _mutableData.value = it
-                }.launchIn(viewModelScope)
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-    }
-
     override fun onCleared() {
         super.onCleared()
-
         viewModelScope.cancel()
     }
 }

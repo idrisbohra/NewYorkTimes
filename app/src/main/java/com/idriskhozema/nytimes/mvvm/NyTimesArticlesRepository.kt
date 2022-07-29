@@ -21,9 +21,9 @@ class NyTimesArticlesRepository @Inject constructor(
     private val context: NyTimesApp,
     private val networkHelper: NetworkHelper,
     private val apiServiceHelper: ApiServiceHelperImplementation
-){
+): NyTimesArticlesRepo{
 
-    suspend fun fetchArticles() : Flow<DataState<NyTimesData>> = flow{
+    override suspend fun fetchArticles() : Flow<DataState<NyTimesData>> = flow{
 
             val response = apiServiceHelper.fetchNyTimesArticles()
             when(response.code()) {

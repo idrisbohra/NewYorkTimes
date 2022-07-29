@@ -27,3 +27,23 @@ Developer has to create an account and once the account is created, developer ha
 Once the app is created, developer has to create an API key.
 
 Developer also has to enable the APIs that he/she wants to access by using his generated API key.
+
+- Unit Test Steps:
+
+In order to create out the test, i used mocked objects instead of real things. Mocking is a process of simulating or creating behavior that is not real.
+
+In getting list of articles flow, i first test the ViewModel then the Repository.
+
+•	Test cases for NyTimesViewModel
+1. Loading state verification test cases
+2. API success state test case
+3. API error state test case
+
+To mock NyTimesArticlesRepository, i used Mockito library.
+2. API success state test case
+3. API error state test case
+
+Summary:
+This application uses the latest android architecture components to efficiently fetch and show list of NewYork Times articles 
+along with common Unit test cases to test the functionality.
+
