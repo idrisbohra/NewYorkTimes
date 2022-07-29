@@ -40,8 +40,8 @@ In getting list of articles flow, i first test the ViewModel then the Repository
 3. API error state test case
 
 To mock NyTimesArticlesRepository, i used Mockito library.
-2. API success state test case
-3. API error state test case
+1. API success state test case
+2. API error state test case
 
 Summary:
 This application uses the latest android architecture components to efficiently fetch and show list of NewYork Times articles 
