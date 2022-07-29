@@ -8,8 +8,8 @@ In the following project, I used the below-mentioned techniques.
 •	MVVM(Architectural Design Pattern)
 •	Navigation Graph(Android Architectural Design Components)
 •	Dagger Hilt(Android Architectural Design Components)
-•	Retrofit
-•	Kotlin Flow
+•	Retrofit 
+•	Kotlin Flow 
 •	Coroutines
 
 This application is having 2 screens.
